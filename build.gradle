@@ -42,6 +42,9 @@ dependencies {
     // HTTP Server
     implementation 'org.nanohttpd:nanohttpd:2.3.1'
     include 'org.nanohttpd:nanohttpd:2.3.1'
+
+    implementation 'io.github.classgraph:classgraph:4.8.184'
+    include 'io.github.classgraph:classgraph:4.8.184'
 }
 
 processResources {
@@ -53,7 +56,8 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 21
+	it.options.release = 21;
+    options.compilerArgs += ['-parameters']
 }
 
 java {
