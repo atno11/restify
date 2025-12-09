@@ -17,6 +17,8 @@ public class ApiConfig {
     private final String AUTHENTICATION_KEY = "";
     @SuppressWarnings("FieldCanBeLocal")
     private final boolean SWAGGER = true;
+    @SuppressWarnings("FieldCanBeLocal")
+    private final String GLOBAL_PREFIX = "/api/v1/";
 
     public boolean getSsl(){
         return this.SSL;
@@ -40,5 +42,9 @@ public class ApiConfig {
 
     public boolean getSwagger(){
         return this.SWAGGER;
+    }
+
+    public String getGlobalPrefix(){
+        return this.GLOBAL_PREFIX;
     }
 }
